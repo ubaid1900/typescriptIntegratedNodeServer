@@ -1,0 +1,32 @@
+npm init (just hit enter, enter, enter) - creates package.json
+npm install typescript -s
+add to scripts "tsc"
+
+npm run tsc -- --init (creates - tsconfig.json)
+uncomment outDir and give a directory (["outDir": ".\build"] in our case)
+
+npm install express -s
+npm install @types/express -s (typescript does not know express types, so install them)
+
+npm run tsc (compile application, this generates build\app.js)
+node build/app.js (run the application)
+
+to run directly (recommended for development only) with typescript, for production always run javascript version:
+    npm install ts-node-dev -s (it installs ts-node as a dependency)
+    add to package.json 
+        "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
+        "prod": "tsc && node ./build/app.js"
+    to start the program
+        (dev:) npm run dev
+        (prod:) npm run prod 
+
+
+
+
+
+
+
+
+
+npm run dev
+npm run prod

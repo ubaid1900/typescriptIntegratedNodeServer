@@ -18,13 +18,13 @@ var times = [
   { id: 4, name: 'Maghrib', preferredTime: '7:00 PM' },
   { id: 5, name: 'Isha', preferredTime: '8:15 PM' }];
 app.get('/prayTimes', function (req, res) {
-  res.send({ times: times });
+  res.send(times);
 });
 app.get('/prayTimes/byname/:prayerName', function (req, res) {
-  res.send({ times: times.find(f => f.name.toLowerCase() === req.params.prayerName.toLowerCase()) });
+  res.send(times.find(f => f.name.toLowerCase() === req.params.prayerName.toLowerCase()));
 });
 app.get('/prayTimes/:prayerId', function (req, res) {
-  res.send({ times: times.find(f => f.id === +req.params.prayerId) });
+  res.send(times.find(f => f.id === +req.params.prayerId));
 });
 
 // app.post('/upload', uploader.array('files[]'), function (req, res) {
